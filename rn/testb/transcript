@@ -1,0 +1,168 @@
+# //  Questa Sim-64
+# //  Version 2019.4 linux_x86_64 Oct 15 2019
+# //
+# //  Copyright 1991-2019 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Project file /users/aaguilera/projecte1/rn/rn_sim.mpf was not found.
+# Unable to open project.
+# Loading project sim_cpu
+# Compile of cpu.sv failed with 3 errors.
+# Compile of cpu_package.sv failed with 3 errors.
+# Compile of size_fields_package.sv was successful with warnings.
+# 3 compiles, 2 failed with 6 errors.
+# Compile of cpu.sv failed with 3 errors.
+# Compile of cpu_package.sv failed with 3 errors.
+# Compile of size_fields_package.sv was successful with warnings.
+# 3 compiles, 2 failed with 6 errors.
+# Compile of cpu.sv failed with 3 errors.
+# Compile of cpu_package.sv failed with 1 errors.
+# Compile of size_fields_package.sv was successful with warnings.
+# 3 compiles, 2 failed with 4 errors.
+# Compile of cpu.sv failed with 3 errors.
+# Compile of cpu_package.sv failed with 1 errors.
+# Compile of size_fields_package.sv was successful with warnings.
+# 3 compiles, 2 failed with 4 errors.
+# Compile of cpu.sv failed with 3 errors.
+# Compile of cpu_package.sv failed with 2 errors.
+# Compile of size_fields_package.sv was successful with warnings.
+# 3 compiles, 2 failed with 5 errors.
+# Compile of cpu.sv failed with 3 errors.
+# Compile of cpu_package.sv failed with 1 errors.
+# Compile of size_fields_package.sv was successful with warnings.
+# 3 compiles, 2 failed with 4 errors.
+# Compile of cpu.sv failed with 3 errors.
+# Compile of cpu_package.sv failed with 1 errors.
+# Compile of size_fields_package.sv failed with 1 errors.
+# 3 compiles, 3 failed with 5 errors.
+# Compile of cpu.sv failed with 3 errors.
+# Compile of cpu_package.sv failed with 1 errors.
+# Compile of size_fields_package.sv was successful with warnings.
+# 3 compiles, 2 failed with 4 errors.
+# Compile of cpu.sv failed with 3 errors.
+# Compile of cpu_package.sv was successful with warnings.
+# Compile of size_fields_package.sv was successful with warnings.
+# 3 compiles, 1 failed with 3 errors.
+# Compile of cpu.sv failed with 3 errors.
+# Compile of cpu_package.sv was successful with warnings.
+# Compile of size_fields_package.sv was successful with warnings.
+# 3 compiles, 1 failed with 3 errors.
+# Compile of cpu.sv failed with 1 errors.
+# Compile of cpu_package.sv was successful with warnings.
+# Compile of size_fields_package.sv was successful with warnings.
+# 3 compiles, 1 failed with 1 error.
+# Compile of cpu.sv was successful.
+# Compile of cpu_package.sv was successful with warnings.
+# Compile of size_fields_package.sv was successful with warnings.
+# 3 compiles, 0 failed with no errors.
+# Compile of cpu.sv was successful.
+# Compile of cpu_package.sv was successful with warnings.
+# Compile of size_fields_package.sv was successful with warnings.
+# Compile of cpu_tb.sv failed with 6 errors.
+# 4 compiles, 1 failed with 6 errors.
+# Compile of cpu.sv was successful.
+# Compile of cpu_package.sv was successful with warnings.
+# Compile of size_fields_package.sv was successful with warnings.
+# Compile of cpu_tb.sv failed with 2 errors.
+# 4 compiles, 1 failed with 2 errors.
+# Compile of cpu.sv was successful.
+# Compile of cpu_package.sv was successful with warnings.
+# Compile of size_fields_package.sv was successful with warnings.
+# Compile of cpu_tb.sv was successful with warnings.
+# 4 compiles, 0 failed with no errors.
+vsim work.cpu_tb
+# vsim work.cpu_tb 
+# Start time: 00:53:12 on Aug 23,2021
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.cpu_package(fast)
+# Loading work.cpu_tb_sv_unit(fast)
+# Loading work.cpu_tb(fast)
+vsim -voptargs=+acc work.cpu_tb
+# End time: 00:54:42 on Aug 23,2021, Elapsed time: 0:01:30
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.cpu_tb 
+# Start time: 00:54:42 on Aug 23,2021
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vopt-143) Recognized 1 FSM in module "cpu(fast)".
+# Loading sv_std.std
+# Loading work.cpu_package(fast)
+# Loading work.cpu_tb_sv_unit(fast)
+# Loading work.cpu_tb(fast)
+# Loading work.cpu(fast)
+add wave -position insertpoint  \
+sim:/cpu_tb/cpu0/clk \
+sim:/cpu_tb/cpu0/reset \
+sim:/cpu_tb/cpu0/MEM \
+sim:/cpu_tb/cpu0/pc \
+sim:/cpu_tb/cpu0/ins \
+sim:/cpu_tb/cpu0/reg_or \
+sim:/cpu_tb/cpu0/reg_dest \
+sim:/cpu_tb/cpu0/op_code \
+sim:/cpu_tb/cpu0/RegFile \
+sim:/cpu_tb/cpu0/pipe_state_temp \
+sim:/cpu_tb/cpu0/pipe_state
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf /users/aaguilera/projecte1/rn/sim/cpu/wave.do
+run 20ns
+# Compile of cpu.sv was successful.
+# Compile of cpu_package.sv was successful with warnings.
+# Compile of size_fields_package.sv was successful with warnings.
+# Compile of cpu_tb.sv was successful with warnings.
+# 4 compiles, 0 failed with no errors.
+restart-f
+# invalid command name "restart-f"
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "cpu(fast)".
+# Loading sv_std.std
+# Loading work.cpu_package(fast)
+# Loading work.cpu_tb_sv_unit(fast)
+# Loading work.cpu_tb(fast)
+# Loading work.cpu(fast)
+run 20ns
+# Causality operation skipped due to absence of debug database file
+# Compile of cpu.sv was successful with warnings.
+# Compile of cpu_package.sv was successful with warnings.
+# Compile of size_fields_package.sv was successful with warnings.
+# Compile of cpu_tb.sv was successful with warnings.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: /users/aaguilera/projecte1/rn/rtl/cpu.sv(87): (vopt-2697) MSB 8 of part-select into 'ins' is out of bounds.
+# ** Note: (vopt-143) Recognized 1 FSM in module "cpu(fast)".
+# Loading sv_std.std
+# Loading work.cpu_package(fast)
+# Loading work.cpu_tb_sv_unit(fast)
+# Loading work.cpu_tb(fast)
+# Loading work.cpu(fast)
+run 20ns
+# Compile of cpu.sv was successful with warnings.
+# Compile of cpu_package.sv was successful with warnings.
+# Compile of size_fields_package.sv was successful with warnings.
+# Compile of cpu_tb.sv was successful with warnings.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: /users/aaguilera/projecte1/rn/rtl/cpu.sv(80): (vopt-2697) MSB 8 of part-select into 'ins' is out of bounds.
+# ** Note: (vopt-143) Recognized 1 FSM in module "cpu(fast)".
+# Loading sv_std.std
+# Loading work.cpu_package(fast)
+# Loading work.cpu_tb_sv_unit(fast)
+# Loading work.cpu_tb(fast)
+# Loading work.cpu(fast)
+run 20ns
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf /users/aaguilera/projecte1/rn/sim/cpu/wave.do
+quit -sim
+# Break key hit
+# End time: 01:20:47 on Aug 23,2021, Elapsed time: 0:26:05
+# Errors: 1, Warnings: 2

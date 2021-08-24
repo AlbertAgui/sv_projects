@@ -1,0 +1,22 @@
+/users/aaguilera/projecte1/rn/rtl/package/size_fields_package.sv {2 {vlog -work work -vopt -sv -stats=none /users/aaguilera/projecte1/rn/rtl/package/size_fields_package.sv
+QuestaSim-64 vlog 2019.4 Compiler 2019.10 Oct 15 2019
+-- Compiling package size_fields_package
+** Warning: /users/aaguilera/projecte1/rn/rtl/package/size_fields_package.sv(7): (vlog-2283) Extra semicolon in $unit (global) scope.
+** Warning: /users/aaguilera/projecte1/rn/rtl/package/size_fields_package.sv(8): (vlog-2284) Empty $unit scope found.
+-- Compiling package size_fields_package_sv_unit
+
+Top level modules:
+	--none--
+
+} {} {}} /users/aaguilera/projecte1/rn/testb/cpu_tb.sv {2 {vlog -work work -vopt -sv -stats=none /users/aaguilera/projecte1/rn/testb/cpu_tb.sv
+QuestaSim-64 vlog 2019.4 Compiler 2019.10 Oct 15 2019
+-- Compiling module cpu_tb
+-- Importing package cpu_package
+** Warning: /users/aaguilera/projecte1/rn/testb/cpu_tb.sv(26): (vlog-2283) Extra semicolon in $unit (global) scope.
+** Warning: /users/aaguilera/projecte1/rn/testb/cpu_tb.sv(27): (vlog-2284) Empty $unit scope found.
+-- Compiling package cpu_tb_sv_unit
+
+Top level modules:
+	cpu_tb
+
+} {} {}}

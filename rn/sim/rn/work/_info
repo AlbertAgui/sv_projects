@@ -1,0 +1,151 @@
+m255
+K4
+z2
+!s11f vlog 2019.4 2019.10, Oct 15 2019
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/users/aaguilera/projecte1/rn/sim/cpu
+T_opt
+!s110 1629714340
+VO2bPz2o8=ld3Zo3JM5V0@2
+04 6 4 work noc_tb fast 0
+=3-e4434b5139c6-612377a3-f3516-a53b
+o-quiet -auto_acc_if_foreign -work work +acc
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2019.4;69
+R0
+vnoc_tb
+!s105 noc_tb_sv_unit
+DXx4 work 14 noc_tb_sv_unit 0 22 LThCb4SIdQ?SeW@4Y2V5V1
+Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z3 DXx4 work 12 node_package 0 22 3nej5Oz[dQbLLFGFJOI023
+Z4 !s110 1629757797
+!i10b 1
+!s100 HWDkZ9;b_M1RmP``mkh^L3
+!s11b YHZX<SfUUTe7bX9abBiOP3
+Il^Jll@]J4FE2_e^CRf@IP1
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+S1
+Z6 d/users/aaguilera/projecte1/rn/sim/rn
+Z7 w1629714608
+Z8 8/users/aaguilera/projecte1/rn/testb/noc_tb.sv
+Z9 F/users/aaguilera/projecte1/rn/testb/noc_tb.sv
+!i122 -1
+L0 1
+Z10 OL;L;2019.4;69
+r1
+!s85 0
+31
+Z11 !s108 1629757797.000000
+!s107 /users/aaguilera/projecte1/rn/testb/noc_tb.sv|
+Z12 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/users/aaguilera/projecte1/rn/testb/noc_tb.sv|
+!i113 0
+Z13 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+Xnoc_tb_sv_unit
+R2
+R4
+VLThCb4SIdQ?SeW@4Y2V5V1
+r1
+!s85 0
+!i10b 1
+!s100 lP9@n9elMHR?Zh888m7k>2
+ILThCb4SIdQ?SeW@4Y2V5V1
+!i103 1
+S1
+R6
+R7
+R8
+R9
+!i122 -1
+L0 67
+R10
+31
+R11
+Z14 !s107 /users/aaguilera/projecte1/rn/testb/noc_tb.sv|
+R12
+!i113 0
+R13
+R1
+Xnode_package
+R2
+R4
+!i10b 1
+!s100 k72N[FF]nZ`n@bC7AG[9Y2
+!s11b P_?TYIi<4ZG;MV60WSda90
+I3nej5Oz[dQbLLFGFJOI023
+V3nej5Oz[dQbLLFGFJOI023
+S1
+R6
+w1629713595
+8/users/aaguilera/projecte1/rn/rtl/package/node_package.sv
+F/users/aaguilera/projecte1/rn/rtl/package/node_package.sv
+!i122 -1
+L0 1
+R10
+r1
+!s85 0
+31
+R11
+!s107 /users/aaguilera/projecte1/rn/rtl/package/node_package.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/users/aaguilera/projecte1/rn/rtl/package/node_package.sv|
+!i113 0
+R13
+R1
+vrn
+R2
+R3
+R4
+!i10b 1
+!s100 USRP[@C4l;XVDmMmXfS2]2
+!s11b Zj9E0aOcT1<10X;mImZh63
+IUd8H9^M4^@oS8CfUfXLN91
+R5
+S1
+R6
+w1629714613
+8/users/aaguilera/projecte1/rn/rtl/rn.sv
+F/users/aaguilera/projecte1/rn/rtl/rn.sv
+!i122 -1
+L0 1
+R10
+r1
+!s85 0
+31
+R11
+!s107 /users/aaguilera/projecte1/rn/rtl/rn.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/users/aaguilera/projecte1/rn/rtl/rn.sv|
+!i113 0
+R13
+R1
+vsn
+R2
+R3
+R4
+!i10b 1
+!s100 EZ5>;m_4I@An40=K0k>=43
+!s11b Y@T68Bm_i^z``YhV1W[Zg1
+I`S8zJBLQ7Xem0JWzc3kz70
+R5
+S1
+R6
+w1629713472
+8/users/aaguilera/projecte1/rn/rtl/sn.sv
+F/users/aaguilera/projecte1/rn/rtl/sn.sv
+!i122 -1
+L0 1
+R10
+r1
+!s85 0
+31
+R11
+!s107 /users/aaguilera/projecte1/rn/rtl/sn.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/users/aaguilera/projecte1/rn/rtl/sn.sv|
+!i113 0
+R13
+R1
