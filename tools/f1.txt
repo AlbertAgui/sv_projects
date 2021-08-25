@@ -1,0 +1,7 @@
+.pep  (   albert   )
+.andreu (   albert )
+.miky (  john )
+.andreu(john)
+.pau(pep)
+.marc(adria)
+.adria(ter)
