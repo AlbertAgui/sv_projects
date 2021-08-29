@@ -51,3 +51,16 @@
 /home/bscuser/Escritorio/Vector_Accelerator/src/rtl/vec_element_ctrl_lane.sv:47:   ud_elements_lane_i, ud_elen_lane_i, slide_lane_i, src1_vreg_addr_i,
 /home/bscuser/Escritorio/Vector_Accelerator/src/rtl/vec_element_ctrl_lane.sv:162:  input   wire  [VADDR_WIDTH-1:0]               src1_vreg_addr_i;       //..source vector register address 1    (queue  -> slave)
 /home/bscuser/Escritorio/Vector_Accelerator/src/rtl/vec_element_ctrl_lane.sv:354:        src1_vreg_addr_reg  <= src1_vreg_addr_i;
+/home/bscuser/Escritorio/Vector_Accelerator/src/checkers/ck_arith_queue.sv:50:    input src1_is_scalar,
+/home/bscuser/Escritorio/Vector_Accelerator/src/checkers/ck_arith_queue.sv:79:	 (instr_queue[read_pointer][53] && valid_instr && !src1_is_scalar)==read_src1_valid_o ##0
+/home/bscuser/Escritorio/Vector_Accelerator/src/checkers/ck_arith_queue.sv:99:		if (two) (req_o |-> ((src1_valid_i || src1_is_scalar) ##0 src2_valid_i))
+/home/bscuser/Escritorio/Vector_Accelerator/src/checkers/ck_VRF_slice_wrapper.sv:23:    input [5:0]                 src1_i,
+/home/bscuser/Escritorio/Vector_Accelerator/src/checkers/ck_VRF_slice_wrapper.sv:63:	@(posedge clk) (arith_grant |-> s_valid_reg_addr(src1_i) ##0 s_valid_reg_addr(src2_i) ##0 s_valid_reg_addr(src3_i) ##0 s_valid_reg_addr(dst_i));
+/home/bscuser/Escritorio/Vector_Accelerator/src/checkers/ck_VRF_slice_wrapper.sv:111:		src1_reg = (arith_grant_i) ? src1_i : src1_reg;
+/home/bscuser/Escritorio/Vector_Accelerator/src/checkers/ck_VRF_slice_wrapper.sv:146:	!$isunknown(src1_i) ##0 !$isunknown(src2_i) ##0 !$isunknown(src3_i) ##0 !$isunknown(dst_i);
+/home/bscuser/Escritorio/Vector_Accelerator/src/checkers/ck_VRF_slice_wrapper.sv:204:a_corr_arith_mapping_imm : assert property (disable iff (!rsn_i) p_corr_arith_mapping_imm(clk_i, arith_grant_i, src1_i, src2_i, src3_i, dst_i)) else $error("error.VU.%m");
+/home/bscuser/Escritorio/Vector_Accelerator/src/checkers/ck_VRF_slice_wrapper.sv:224:	c_src1 : coverpoint src1_i  {
+/home/bscuser/Escritorio/Vector_Accelerator/src/checkers/ck_FSM_lane.sv:32:    input               [5:0]   src1_i,
+/home/bscuser/Escritorio/Vector_Accelerator/src/checkers/ck_FSM_lane.sv:276:    !req_i ##0 !src1_valid_i ##0 all_zeros(src1_i) ##0 !src2_valid_i ##0 all_zeros(src2_i) ##0 
+/home/bscuser/Escritorio/Vector_Accelerator/src/checkers/ck_FSM_lane.sv:306:      $isunknown(src3_valid_i) || $isunknown(src1_i) || $isunknown(src2_i) || $isunknown(src3_i) ||
+/home/bscuser/Escritorio/Vector_Accelerator/src/checkers/ck_FSM_lane.sv:1026:a_RF_source_operand_in_FILL_A : assert property (disable iff (!rsn_i) p_RF_source_operand_in_state(clk_i, rsn_i, FILL_A, src1_i))

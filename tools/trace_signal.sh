@@ -42,6 +42,11 @@ if [[ (("$option" == "-m") && ("$#" == 3))  ]]; then
   echo "#Signal portmaps:#"
   echo "##################"
   cat $file_out
+  echo "###############"
+  echo "#Signal names:#"
+  echo "###############"
+  cat $find_file
+  printf "\n"
   rm $file_in_lane
   rm $search_file
 else
