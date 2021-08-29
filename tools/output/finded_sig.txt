@@ -1,0 +1,4 @@
+src1_i
+src1_vreg_addr_i
+src1_int
+src1_issue_lane

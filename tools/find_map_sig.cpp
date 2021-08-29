@@ -9,6 +9,9 @@
 #include <set>
 
 using namespace std;
+
+int did = 0;
+
 void reverseStr(string& str)
 {
     int n = str.length();
@@ -90,10 +93,10 @@ string line_work(int fd, string sig)
   int ini = 0, i = 0;
   string line = read_line(fd);
   //cout << line;
-  cout << "line:" << line << '\n';
+  //cout << "line:" << line << '\n';
   if((i = line.find(sig)) == -1)return "";
   ini = i; 
-  cout << line << '\n';
+  //cout << line << '\n';
 
   --i;
   while(i != -1)
@@ -121,8 +124,9 @@ bool sig_find(const set<string> &s_find_sig, const string& sig) {
 
 void add_sig_file(int fd, string sig) {
   char *str = str_to_char(sig);
+  //printf("sig: %s\n",str);
   int pos = lseek(fd,0,SEEK_CUR);
-  if(pos != 0)
+  if(did != 0)
     write(fd,"\n", strlen("\n"));
   write(fd, str, strlen(str));
 }
@@ -150,26 +154,27 @@ int main(int argc, char * argv[])
   set<string> s_find, s_in_sig;
   mv_fd_to_set(fd_find, s_find);//init set of finded signals
   mv_fd_to_set(fd_in_sig, s_in_sig);
-  lseek(fd_find,-1,SEEK_END);//to insert new values
+  lseek(fd_find,0,SEEK_END);//to insert new values
   set<string>::iterator it = s_in_sig.begin();
 
   int size = get_fd_size(fd_in_lan);
   string name, sig;
   
   while(it != s_in_sig.end()) {
-    cout << "sig: " << (*it) << '\n';
+    //cout << "sig: " << (*it) << '\n';
     sig = (*it);
     while ((lseek(fd_in_lan,0,SEEK_CUR)) != size)//work in al lanes
     {
       name = line_work(fd_in_lan, sig);
 
       if(name.compare("") != 0) {//if we have a new signal
-        cout << "name1: " << name << '\n';
+        //cout << "name1: " << name << '\n';
         if(not sig_find(s_find, name)) {//sig was find previously?
 	  s_find.insert(name);
-          cout << "name2: " << name << '\n';
+          //cout << "name2: " << name << '\n';
           add_sig_file(fd_find, name);
           add_sig_file(fd_out_sig, name);//add new sig to find
+	  did = 1;
         }
      }
     }
