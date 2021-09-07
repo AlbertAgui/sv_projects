@@ -1,5 +1,8 @@
 #!/bin/bash
 
+INITIAL_WORKING_DIRECTORY=$(pwd)
+cd "$(dirname "$0")"
+
 #option=$1
 var=$1
 file=$2
@@ -49,5 +52,7 @@ if [[ ("$#" == 2)  ]]; then
   rm $file_in_lane
   rm $search_file
 else
-  echo -e "Usage:\n trace_sig PATTERN FILE : Trace signal, get map and asignations\n"
+  echo -e "Usage:\n trace_sig SIGNAL_NAME ABSOLUTE_PATH_TO_DIRECTORY : Trace signal, get map and asignations\n"
 fi
+
+cd $INITIAL_WORKING_DIRECTORY
