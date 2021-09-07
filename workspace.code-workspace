@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "rn"
+		}
+	],
+	"settings": {
+		"[json]": {
+
+			"editor.quickSuggestions": {
+				"strings": true
+			},
+			"editor.suggest.insertMode": "replace"
+		},
+		"verilog.linting.verilator.arguments": "rn"
+	}
+}

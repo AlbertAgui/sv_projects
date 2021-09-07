@@ -1,7 +1,7 @@
-module sn
 import node_package::*;
 
-#()
+module sn
+
 (
 input logic clk, 
 input logic reset, 
@@ -17,7 +17,6 @@ logic [WORD_WIDTH-1:0] RegFile [0:ADDR_WIDTH-1];
 
 //Buffer
 ReqType rx_req_buffer;
-
 ///////////////////////
 //STATE MACHINES
 
@@ -28,7 +27,6 @@ always @(posedge clk or posedge reset) begin
     end
   end
 end
-
 
 //Rx_Req
 
@@ -42,7 +40,7 @@ always_comb begin
         end
       end
       StAsserted: begin
-        if(v_rx_req) begin
+        if( v_rx_req ) begin
           req_state_temp = StIdle;
           rx_req_buffer.opcode = rx_req.opcode;
           rx_req_buffer.addr = rx_req.addr;
