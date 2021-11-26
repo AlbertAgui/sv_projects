@@ -1,0 +1,73 @@
+m255
+K4
+z2
+!s11f MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/users/aaguilera/sv_projects/SoC/sim
+T_opt
+!s110 1637936558
+VY;9czUMbo@f9:8V^[_Mm73
+04 8 4 work Top_test fast 0
+=1-e4434b5139c6-61a0edae-62c9a-407dd
+o-quiet -auto_acc_if_foreign -work ../workspace/work
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2019.4;69
+R0
+vTop_soc
+Z2 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+!s110 1637938139
+!i10b 1
+!s100 bUY^jFi9o4EfB0Ua6Ej@C1
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IV5AJ1ojQZI]Un6T^zbD<k2
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+S1
+Z5 d/home/bscuser/Escritorio/ssh_rem/root/sv_projects/SoC/sim
+w1637926581
+8../rtl/rtl_syn/Top_soc.sv
+F../rtl/rtl_syn/Top_soc.sv
+!i122 7
+L0 1 9
+Z6 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z7 !s108 1637938139.000000
+!s107 ../rtl/rtl_test/Top_test.sv|../rtl/rtl_syn/Top_soc.sv|
+Z8 !s90 -sv|-work|../workspace/work|-f|../file_list/src_files.f|
+!i113 1
+Z9 o-sv -work ../workspace/work
+R1
+n@top_soc
+vTop_test
+R2
+!s110 1637938140
+!i10b 1
+!s100 gBEJ_EzWekiX`LJMCm[T53
+R3
+IJ>gKmoO5lgVb[EB47PhlQ0
+R4
+S1
+R5
+w1637937253
+8../rtl/rtl_test/Top_test.sv
+F../rtl/rtl_test/Top_test.sv
+!i122 7
+L0 1 22
+R6
+r1
+!s85 0
+31
+R7
+Z10 !s107 ../rtl/rtl_test/Top_test.sv|../rtl/rtl_syn/Top_soc.sv|
+R8
+!i113 1
+R9
+R1
+n@top_test
