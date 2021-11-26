@@ -1,5 +1,7 @@
-module noc_tb
-import node_package::*;
+//import node_package::*;
+
+module noc
+#()
 ();
 
 //node
@@ -38,29 +40,5 @@ sn0(
 .tx_data(data),
 .v_tx_data(v_data)
 );
-
-//tb value
-assign pre_tx_req = work; //
-
-always #1 clk = ~clk;
-
-initial
-begin
-clk <= 0;
-reset <= 0;
-work <= 0;
-
-#1
-reset <= 1;
-#2
-reset <= 0;
-
-#4
-work <= 1;
-#6
-work <= 0;
-
-#10;
-end
 
 endmodule;

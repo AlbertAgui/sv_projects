@@ -1,7 +1,10 @@
+//`ifdef console
 package node_package;
+//`endif
 
 ///////////////////
 //Size parameters
+
 parameter ADDR_WIDTH=3, OPCODE_WIDTH=1, WORD_WIDTH=8;
 
 /////////////////
@@ -38,7 +41,7 @@ typedef struct packed{
 /////////////
 //Resp Types
 
-typedef struct {
+typedef struct packed{
   logic [OPCODE_WIDTH-1:0] opcode;
 } RespType;
 
@@ -46,11 +49,13 @@ typedef struct {
 /////////////////
 //machine state//
 /////////////////
+
 typedef enum {
   StIdle,
   StAsserted,
   StData_Pass  
 } Type_chn_state;
 
-
-endpackage
+//`ifdef console
+endpackage;
+//`endif

@@ -1,0 +1,25 @@
+/home/bscuser/Escritorio/sv_projects/rn/rtl/cpu.sv:6:input logic clk,
+/home/bscuser/Escritorio/sv_projects/rn/rtl/cpu.sv:13:always @(posedge clk or posedge reset) begin
+/home/bscuser/Escritorio/sv_projects/rn/rtl/cpu.sv:41:always @(posedge clk or posedge reset) begin
+/home/bscuser/Escritorio/sv_projects/rn/rtl/cpu.sv:54:always @(posedge clk or posedge reset) begin
+/home/bscuser/Escritorio/sv_projects/rn/rtl/cpu.sv:63:always @(posedge clk or posedge reset) begin
+/home/bscuser/Escritorio/sv_projects/rn/rtl/rn.sv:6:input logic clk, 
+/home/bscuser/Escritorio/sv_projects/rn/rtl/rn.sv:58:always @(posedge clk or posedge reset) begin
+/home/bscuser/Escritorio/sv_projects/rn/rtl/rn.sv:101:always @(posedge clk or posedge reset)
+/home/bscuser/Escritorio/sv_projects/rn/rtl/rn.sv:114:always @(posedge clk or posedge reset)
+/home/bscuser/Escritorio/sv_projects/rn/rtl/noc.sv:8:logic clk, reset, work;
+/home/bscuser/Escritorio/sv_projects/rn/rtl/noc.sv:22:.clk, 
+/home/bscuser/Escritorio/sv_projects/rn/rtl/noc.sv:34:.clk,
+/home/bscuser/Escritorio/sv_projects/rn/rtl/sn.sv:6:input logic clk, 
+/home/bscuser/Escritorio/sv_projects/rn/rtl/sn.sv:23:always @(posedge clk or posedge reset) begin
+/home/bscuser/Escritorio/sv_projects/rn/rtl/sn.sv:58:always @(posedge clk or posedge reset) begin
+/home/bscuser/Escritorio/sv_projects/rn/rtl/sn.sv:104:always @(posedge clk or posedge reset) begin
+/home/bscuser/Escritorio/sv_projects/rn/testb/cpu_tb.sv:5:logic clk, reset;
+/home/bscuser/Escritorio/sv_projects/rn/testb/cpu_tb.sv:9:.clk,
+/home/bscuser/Escritorio/sv_projects/rn/testb/cpu_tb.sv:13:always #1 clk = ~clk;
+/home/bscuser/Escritorio/sv_projects/rn/testb/cpu_tb.sv:17:clk <= 0;
+/home/bscuser/Escritorio/sv_projects/rn/testb/noc_tb.sv:6:logic clk, reset, work;
+/home/bscuser/Escritorio/sv_projects/rn/testb/noc_tb.sv:20:.clk, 
+/home/bscuser/Escritorio/sv_projects/rn/testb/noc_tb.sv:32:.clk,
+/home/bscuser/Escritorio/sv_projects/rn/testb/noc_tb.sv:45:always #1 clk = ~clk;
+/home/bscuser/Escritorio/sv_projects/rn/testb/noc_tb.sv:49:clk <= 0;
