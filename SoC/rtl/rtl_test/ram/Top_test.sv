@@ -1,4 +1,4 @@
-`include "SoC_pkg.sv"
+`include "RISCV_pkg.sv"
 
 module Top_test;
 
@@ -6,12 +6,10 @@ module Top_test;
   logic                                     arstn_i;
 
   logic                                     wr_i;
-  logic                                     ack_wr_o;
   logic [WORD_WIDTH-1 : 0]                  wr_data_i;
   logic [INDEX_WIDTH-1 : 0]                 wr_index_i;
 
   logic                                     rd_i;
-  logic                                     ack_rd_o;
   logic [WORD_WIDTH-1 : 0]                  rd_data_o;
   logic [INDEX_WIDTH-1 : 0]                 rd_index_i;
 
@@ -75,12 +73,10 @@ module Top_test;
     .arstn_i       (arstn_i),
 
     .wr_i          (wr_i),
-    .ack_wr_o      (ack_wr_o),
     .wr_data_i     (wr_data_i),
     .wr_index_i    (wr_index_i),
 
     .rd_i          (rd_i),
-    .ack_rd_o      (ack_rd_o),
     .rd_data_o     (rd_data_o),
     .rd_index_i    (rd_index_i)
   );

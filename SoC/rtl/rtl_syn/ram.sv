@@ -1,4 +1,4 @@
-module Top_soc#(
+module ram #(
   parameter WORD_WIDTH=4,
   parameter INDEX_WIDTH=4
 ) (
@@ -16,22 +16,22 @@ module Top_soc#(
   input  logic [INDEX_WIDTH-1 : 0]     rd_index_i
 );
   
-  ram #(
-  .WORD_WIDTH      (WORD_WIDTH),
-  .INDEX_WIDTH     (INDEX_WIDTH)
-  ) u_ram (
-    .clk_i         (clk_i),
-    .arstn_i       (arstn_i),
+  logic [WORD_WIDTH-1 : 0] mem_array [INDEX_WIDTH-1 : 0];
+  logic [WORD_WIDTH-1 : 0] pedro;
 
-    .wr_i          (wr_i),
-    .ack_wr_o      (ack_wr_o),
-    .wr_data_i     (wr_data_i),
-    .wr_index_i    (wr_index_i),
-
-    .rd_i          (rd_i),
-    .ack_rd_o      (ack_rd_o),
-    .rd_data_o     (rd_data_o),
-    .rd_index_i    (rd_index_i)
-  );
+  always_ff @(posedge clk_i) begin
+    ack_wr_o = 1'b0;
+    ack_rd_o = 1'b0;
+    if(wr_i) begin
+        mem_array [wr_index_i] = wr_data_i;
+        ack_wr_o = 1'b1;
+        //$display("wr_index_i: %d",wr_index_i);
+        //$display("wr_data_i: %d",wr_data_i);
+    end
+    if(rd_i) begin
+        rd_data_o = mem_array [rd_index_i];
+        ack_rd_o = 1'b1;
+    end
+  end
 
 endmodule
