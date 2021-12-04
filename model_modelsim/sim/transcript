@@ -1,0 +1,12 @@
+# vsim -c ../workspace/work.Top_test -t ps -64 -do "run 300ms" 
+# Start time: 15:49:00 on Nov 26,2021
+# Loading sv_std.std
+# Loading ../workspace/work.Top_test
+# Loading ../workspace/work.Top_soc
+# run 300ms
+# Start simulation
+# End simulation
+# ** Note: $finish    : ../rtl/rtl_test/Top_test.sv(14)
+#    Time: 20 ps  Iteration: 0  Instance: /Top_test
+# End time: 15:49:01 on Nov 26,2021, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0

@@ -1,7 +1,12 @@
+<<<<<<< HEAD
 `include "SoC_pkg.sv"
+=======
+module Top_test;  
+>>>>>>> 3567d14ef5907dbf6226e3855049080aaa82ce97
 
 module Top_test;
 
+<<<<<<< HEAD
   logic                                     clk_i;
   logic                                     arstn_i;
 
@@ -32,6 +37,18 @@ module Top_test;
   task rd_mem(
   input [INDEX_WIDTH-1 : 0] index
   );
+=======
+  initial begin
+  $display("Start simulation");
+  a = 1'b1;
+  #10
+  a = 1'b0;
+  #10
+  a = 1'b1;
+  $display("End simulation");
+
+  $finish;
+>>>>>>> 3567d14ef5907dbf6226e3855049080aaa82ce97
 
   rd_index_i = index;
   rd_i = 1'b1;
