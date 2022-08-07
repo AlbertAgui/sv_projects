@@ -1,0 +1,40 @@
+# do model.tcl
+# ../file_list
+# ../workspace
+# ** Warning: (vlib-34) Library already exists at "../workspace/work".
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap ../workspace/work 
+# Reading /home/bscuser/intelFPGA_lite/20.1/modelsim_ase/linuxaloem/../modelsim.ini
+# "../workspace/work" maps to directory ./../workspace/work. (Default mapping)
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:23:57 on Feb 26,2022
+# vlog -reportprogress 300 -sv "+acc=rn" -mfcu -suppress 2892,7033 -work ../workspace/work -f ../file_list/test_sig.f 
+# -- Compiling module circular_buffer
+# -- Compiling module circular_buffer_depth
+# -- Compiling module requester
+# -- Compiling module lanes
+# -- Compiling module smu
+# -- Compiling module test_sig_tb
+# 
+# Top level modules:
+# 	circular_buffer
+# 	circular_buffer_depth
+# 	test_sig_tb
+# End time: 23:23:58 on Feb 26,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim ../workspace/work.test_sig_tb -t ps -suppress 7033 
+# Start time: 23:23:58 on Feb 26,2022
+# Loading sv_std.std
+# Loading ../workspace/work.test_sig_tb
+# Loading ../workspace/work.requester
+# Loading ../workspace/work.lanes
+# Loading ../workspace/work.smu
+#######
+#START#
+#######
+# ** Note: $finish    : ../src/test_sig_tb.sv(121)
+#    Time: 26 ps  Iteration: 0  Instance: /test_sig_tb
+# 1
+# Break in Module test_sig_tb at ../src/test_sig_tb.sv line 121
+# End time: 23:28:06 on Feb 26,2022, Elapsed time: 0:04:08
+# Errors: 0, Warnings: 0

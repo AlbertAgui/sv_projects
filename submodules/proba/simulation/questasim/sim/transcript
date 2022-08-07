@@ -1,0 +1,74 @@
+# do model.tcl
+# ../file_list
+# ../workspace
+# ** Warning: (vlib-34) Library already exists at "../workspace/work".
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap ../workspace/work 
+# Reading /home/bscuser/intelFPGA_lite/20.1/modelsim_ase/linuxaloem/../modelsim.ini
+# "../workspace/work" maps to directory ./../workspace/work. (Default mapping)
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 16:56:03 on Jun 14,2022
+# vlog -sv "+acc=rn" -mfcu -suppress 2892,7033,7061 -work ../workspace/work -f ../file_list/test_sig.f 
+# -- Compiling module temp
+# -- Compiling module mod_temp
+# 
+# Top level modules:
+# 	temp
+# 	mod_temp
+# End time: 16:56:03 on Jun 14,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0, Suppressed Errors: 2
+# vsim ../workspace/work.mod_temp -t ps -suppress 7033,7061 
+# Start time: 16:56:03 on Jun 14,2022
+# Loading sv_std.std
+# Loading ../workspace/work.mod_temp
+# ** UI-Msg: (vish-4014) No objects found matching '/mod_temp/u_temp/clk'.
+# Executing ONERROR command at macro ./wave.do line 3
+# ** UI-Msg: (vish-4014) No objects found matching '/mod_temp/u_temp/arst_n'.
+# Executing ONERROR command at macro ./wave.do line 4
+# ** UI-Msg: (vish-4014) No objects found matching '/mod_temp/u_temp/valid_q'.
+# Executing ONERROR command at macro ./wave.do line 6
+# ** UI-Msg: (vish-4014) No objects found matching '/mod_temp/u_temp/wr'.
+# Executing ONERROR command at macro ./wave.do line 8
+# ** UI-Msg: (vish-4014) No objects found matching '/mod_temp/u_temp/rd'.
+# Executing ONERROR command at macro ./wave.do line 9
+# ** UI-Msg: (vish-4014) No objects found matching '/mod_temp/u_temp/cnt_q'.
+# Executing ONERROR command at macro ./wave.do line 10
+# ** UI-Msg: (vish-4014) No objects found matching '/mod_temp/u_temp/wr_pt_q'.
+# Executing ONERROR command at macro ./wave.do line 11
+# ** UI-Msg: (vish-4014) No objects found matching '/mod_temp/u_temp/buff'.
+# Executing ONERROR command at macro ./wave.do line 12
+# ** UI-Msg: (vish-4014) No objects found matching '/mod_temp/u_temp/required_q'.
+# Executing ONERROR command at macro ./wave.do line 14
+# ** UI-Msg: (vish-4014) No objects found matching '/mod_temp/u_temp/out'.
+# Executing ONERROR command at macro ./wave.do line 15
+# wave activecursor not supported in batch mode
+# configure wave not supported in batch mode
+# configure wave not supported in batch mode
+# configure wave not supported in batch mode
+# configure wave not supported in batch mode
+# configure wave not supported in batch mode
+# configure wave not supported in batch mode
+# configure wave not supported in batch mode
+# configure wave not supported in batch mode
+# configure wave not supported in batch mode
+# configure wave not supported in batch mode
+# configure wave not supported in batch mode
+# configure wave not supported in batch mode
+# configure wave not supported in batch mode
+# l2: 7, 111
+# l3: -1, 111
+# ----------------
+# l4:  7, 00111:
+# l4: 31, 11111:
+# ----------------
+# l5:   7, 00111:
+# l5:  -1, 11111:
+# ----------------
+# l4: 31, 11111:
+# l4:  7, 00111:
+# l4:  -1, 11111:
+# l4:   7, 00111:
+# l4:  -1, 11111:
+# l4:   7, 00111:
+# End time: 16:56:04 on Jun 14,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
