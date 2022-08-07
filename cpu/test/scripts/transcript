@@ -1,0 +1,48 @@
+# vsim ../workspace/work.testbench -t 10ns -64 -do "wave.do" -do "run 100ms" 
+# Start time: 23:32:29 on Aug 03,2022
+# Loading sv_std.std
+# Loading ../workspace/work.testbench
+# Loading ../workspace/work.fetch_pkg
+# Loading ../workspace/work.decoder_pkg
+# Loading ../workspace/work.reg_pkg
+# Loading ../workspace/work.alu_pkg
+# Loading ../workspace/work.top_cpu
+# Loading ../workspace/work.fetch
+# Loading ../workspace/work.rom
+# Loading ../workspace/work.decoder
+# Loading ../workspace/work.reg_unit
+# Loading ../workspace/work.alu
+# Loading ../workspace/work.reg_conflict
+# do wave.do
+# ** UI-Msg: (vish-4014) No objects found matching '/testbench/top_cpu_u/reg_unit_u/alu_s1_font_i'.
+# Executing ONERROR command at macro ./wave.do line 27
+# ** UI-Msg: (vish-4014) No objects found matching '/testbench/top_cpu_u/reg_unit_u/alu_s1_font_d'.
+# Executing ONERROR command at macro ./wave.do line 28
+# ** UI-Msg: (vish-4014) No objects found matching '/testbench/top_cpu_u/reg_unit_u/alu_s1_font_q'.
+# Executing ONERROR command at macro ./wave.do line 29
+# ** UI-Msg: (vish-4014) No objects found matching '/testbench/top_cpu_u/reg_unit_u/alu_opcode_i'.
+# Executing ONERROR command at macro ./wave.do line 30
+# ** UI-Msg: (vish-4014) No objects found matching '/testbench/top_cpu_u/reg_unit_u/wb_wr_i'.
+# Executing ONERROR command at macro ./wave.do line 31
+# ** UI-Msg: (vish-4014) No objects found matching '/testbench/top_cpu_u/reg_unit_u/reg_dst_i'.
+# Executing ONERROR command at macro ./wave.do line 32
+# ** UI-Msg: (vish-4014) No objects found matching '/testbench/top_cpu_u/reg_unit_u/imm_i'.
+# Executing ONERROR command at macro ./wave.do line 33
+# ** UI-Msg: (vish-4014) No objects found matching '/testbench/top_cpu_u/reg_unit_u/alu_s1_font_o'.
+# Executing ONERROR command at macro ./wave.do line 34
+# ** UI-Msg: (vish-4014) No objects found matching '/testbench/top_cpu_u/reg_unit_u/alu_opcode_o'.
+# Executing ONERROR command at macro ./wave.do line 35
+# ** UI-Msg: (vish-4014) No objects found matching '/testbench/top_cpu_u/reg_unit_u/wb_wr_o'.
+# Executing ONERROR command at macro ./wave.do line 36
+# ** UI-Msg: (vish-4014) No objects found matching '/testbench/top_cpu_u/reg_unit_u/reg_dst_o'.
+# Executing ONERROR command at macro ./wave.do line 37
+# ** UI-Msg: (vish-4014) No objects found matching '/testbench/top_cpu_u/reg_unit_u/imm_o'.
+# Executing ONERROR command at macro ./wave.do line 38
+# run 100ms
+# ** Note: $finish    : ../../test/rtl/testbench.sv(22)
+#    Time: 6300 ns  Iteration: 1  Instance: /testbench
+# 1
+# Break in Module testbench at ../../test/rtl/testbench.sv line 22
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/bscuser/Escritorio/sv_projects/cpu/test/scripts/wave.do
+# End time: 23:33:58 on Aug 03,2022, Elapsed time: 0:01:29
+# Errors: 0, Warnings: 0
