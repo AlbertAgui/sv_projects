@@ -1,0 +1,104 @@
+# vsim -c ../workspace/work.testbench -sv_lib ../workspace/SumClass -t ns -do "run -all" 
+# Start time: 23:01:18 on Oct 05,2023
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# //  Questa Sim-64
+# //  Version 2022.4 linux_x86_64 Oct 18 2022
+# //
+# //  Copyright 1991-2022 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.clk_rst_if(fast)
+# Loading work.data_if(fast)
+# Loading work.utils_pkg(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.uvm_test_pkg(fast)
+# Loading work.testbench_sv_unit(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.testbench(fast)
+# Loading work.clk_rst_if(fast__2)
+# Loading work.data_if(fast__2)
+# Loading work.dut_top(fast)
+# ** Warning: (vsim-3764) Stand-alone call to function 'sum_object_add' treated as implicit void cast.
+#    Time: 0 ns  Iteration: 0  Instance: /testbench File: ../src/testbench.sv Line: 31
+# Loading ./../workspace/SumClass.so
+# Loading /eda/Siemens/2022-23/RHELx86/QUESTA-CORE-PRIME_2022.4/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
+# run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test v1_test...
+# hey: uvm_test_top.m_env.agenta.m_driver, data:   0, transaction:           1
+# 
+# hey: uvm_test_top.m_env.agenta.m_driver, data:   1, transaction:           2
+# 
+# a_i:   x, b_i:   x, a:   0, b:   0 
+# 
+# hey: uvm_test_top.m_env.agenta.m_driver, data:   2, transaction:           3
+# 
+# hey: uvm_test_top.m_env.agenta.m_driver, data:   3, transaction:           4
+# 
+# a_i:   x, b_i:   x, a:   x, b:   x 
+# 
+# hey: uvm_test_top.m_env.agenta.m_driver, data:   4, transaction:           5
+# 
+# hey: uvm_test_top.m_env.agenta.m_driver, data:   5, transaction:           6
+# 
+# a_i:   x, b_i:   x, a:   x, b:   x 
+# 
+# hey: uvm_test_top.m_env.agenta.m_driver, data:   6, transaction:           7
+# 
+# hey: uvm_test_top.m_env.agenta.m_driver, data:   7, transaction:           8
+# 
+# a_i:   x, b_i:   x, a:   x, b:   x 
+# 
+# hey: uvm_test_top.m_env.agenta.m_driver, data:   8, transaction:           9
+# 
+# hey: uvm_test_top.m_env.agenta.m_driver, data:   9, transaction:          10
+# 
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 100: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    4
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [TEST_DONE]     1
+# ** Note: $finish    : /eda/Siemens/2022-23/RHELx86/QUESTA-CORE-PRIME_2022.4/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 100 ns  Iteration: 64  Instance: /testbench
+# End time: 23:01:21 on Oct 05,2023, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 2

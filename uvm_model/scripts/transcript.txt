@@ -1,0 +1,30 @@
+start create library
+** Warning: (vlib-34) Library already exists at "../workspace/work".
+Errors: 0, Warnings: 1
+start add library
+QuestaSim-64 vmap 2022.4 Lib Mapping Utility 2022.10 Oct 18 2022
+vmap ../workspace/work 
+Reading /eda/Siemens/2022-23/RHELx86/QUESTA-CORE-PRIME_2022.4/questasim/linux_x86_64/../modelsim.ini
+"../workspace/work" maps to directory ./../workspace/work. (Default mapping)
+start compile
+QuestaSim-64 vlog 2022.4 Compiler 2022.10 Oct 18 2022
+Start time: 17:40:29 on Jul 20,2023
+vlog "+acc=rn" -work ../workspace/work -f ../file_list/src_files.f 
+-- Compiling interface dut_if
+-- Compiling interface clk_rst_if
+-- Compiling interface data_if
+-- Compiling package utils_pkg
+-- Compiling package uvm_test_pkg
+-- Importing package mtiUvm.uvm_pkg (uvm-1.1d Built-in)
+** Note: (vlog-2286) ../src/uvm_test_pkg.sv(6): Using implicit +incdir+/eda/Siemens/2022-23/RHELx86/QUESTA-CORE-PRIME_2022.4/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+-- Compiling module dut_top
+-- Compiling package testbench_sv_unit
+-- Importing package uvm_test_pkg
+-- Compiling module testbench
+
+Top level modules:
+	testbench
+End time: 17:40:29 on Jul 20,2023, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+start execute
+Reading pref.tcl
