@@ -9,63 +9,71 @@ import decoder_pkg::*;
   input logic arstn,
   input logic clk,
 
-  //..fetch to decode
-  input decode_state_t decode_state_i,
-  input instruction_t decode_inst_i,
+  //..fetch_to_decoder
+  input  fetch_to_decoder_req_t fetch_to_decoder_req_i,
+  output decoder_to_reg_info_t decoder_to_reg_info_o
 
-  //..decode to reg
-  output decoded_t decoded_info_o
 );
 
   //..ff decoder keep or next
-  instruction_t decode_inst_d, decode_inst_q;
+  fetch_to_decoder_req_t fetch_to_decoder_req_d, fetch_to_decoder_req_q;
 
   always_comb begin
-    unique case (decode_state_i)
+    unique case (fetch_to_decoder_req_i.decoder_state)
+      decoder_nope: begin
+        fetch_to_decoder_req_d = fetch_to_decoder_req_t'(0);
+      end
       decoder_keep: begin
-        decode_inst_d = decode_inst_q;
+        fetch_to_decoder_req_d = decode_inst_q;
       end
       decoder_next: begin
-        decode_inst_d = decode_inst_i;
+        fetch_to_decoder_req_d = decode_inst_i;
       end
     endcase
   end
 
   always_ff @(posedge clk or negedge arstn) begin
     if (~arstn) begin
-      decode_inst_q <= instruction_t'(0);
-    end else begin
-      decode_inst_q <= decode_inst_d;
+      fetch_to_decoder_req_q <= fetch_to_decoder_req_t'(0);
+    end
+      fetch_to_decoder_req_q <= fetch_to_decoder_req_d;
     end
   end
 
   //..decode info
-  decoded_t decoded_info;
+  decoded_instruction_t decoded_instruction;
 
   always_comb begin
-    decoded_info = decoded_t'(0);
-    unique case (decode_inst_q.opcode)
+    decoded_instruction = decoded_t'(0);
+    unique case (decoded_instruction_q.opcode)
       add: begin
-        decoded_info.alu_s1_font = font_reg;
-        decoded_info.alu_opcode = op_add;
-        decoded_info.wb_wr = 1'b1;
+        decoded_instruction.alu_s1_font = font_reg;
+        decoded_instruction.alu_opcode = op_add;
+        decoded_instruction.wb_wr = 1'b1;
       end
       mov: begin
-        decoded_info.alu_s1_font = font_imm;
-        decoded_info.alu_opcode = op_move;
-        decoded_info.wb_wr = 1'b1;
+        decoded_instruction.alu_s1_font = font_imm;
+        decoded_instruction.alu_opcode = op_move;
+        decoded_instruction.wb_wr = 1'b1;
       end
       nop: begin
-        decoded_info.alu_opcode = op_none;
-        decoded_info.wb_wr = 1'b0;
+        decoded_instruction.alu_opcode = op_none;
+        decoded_instruction.wb_wr = 1'b0;
+      end
+      branch: begin
+        decoded_instruction.alu_s1_font = font_reg;
+        decoded_instruction.alu_opcode = op_add;
+        decoded_instruction.wb_wr = 1'b0;
+        decoded_instruction.pc_branch = 1'b1;
       end
     endcase
-    decoded_info.reg_s1 = decode_inst_q.reg_s1;
-    decoded_info.reg_s2 = decode_inst_q.reg_s2;
-    decoded_info.reg_dst = decode_inst_q.reg_dst;
-    decoded_info.imm = decode_inst_q.imm;
+    decoded_instruction.reg_s1 = decoded_instruction_q.reg_s1;
+    decoded_instruction.reg_s2 = decoded_instruction_q.reg_s2;
+    decoded_instruction.reg_dst = decoded_instruction_q.reg_dst;
+    decoded_instruction.imm = decoded_instruction_q.imm;
   end
 
-  assign decoded_info_o = decoded_info;
+  assign decoder_to_reg_info_o.decoded_instruction = decoded_instruction;
+  assign decoder_to_reg_info_o.valid = (fetch_to_decoder_req_q.decoder_state != decoder_nope);
 
 endmodule

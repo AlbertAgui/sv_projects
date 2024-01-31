@@ -13,7 +13,7 @@
 ../../src/rtl/fetch.sv
 ../../src/rtl/reg_unit.sv
 ../../src/rtl/top_cpu.sv
-../../src/rtl/reg_conflict.sv
+../../src/rtl/ctrl_conflict.sv
 
 #..rtl_test
 ../../test/rtl/testbench.sv

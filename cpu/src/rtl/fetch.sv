@@ -1,44 +1,57 @@
 module fetch
-import fetch_pkg::*;
+  import fetch_pkg::*;
 #(
 ) (
   //..clk and arstn
-  input   logic                  clk,
-  input   logic                  arstn,
+  input   logic                        clk,
+  input   logic                        arstn,
 
-  //..fetch - decode
-  input   fetch_state_t          fetch_state_i,
-  output  instruction_t          fetch_inst_o,
+  //..fetch
+  input   fetch_req_t                  fetch_req_i,
+  output  fetch_to_decoder_info_t      fetch_to_decoder_info_o, 
+
+  //..wb_to_fetch
+  input   wb_to_fetch_req_t            wb_to_fetch_req_i,          
 
   //..debug
-  output  pc_t                   fetch_id_o
+  output  pc_t                         fetch_id_o
 );
 
-  //..ff pc fetch or keep instruction
+  //..pc
   pc_t pc_d, pc_q;
+  logic take_branch;
+  imm_t branch_value;
+
+  assign take_branch  = wb_to_fetch_req_i.take_branch;
+  assign branch_value        = wb_to_fetch_req_i.branch_value;
 
   always_comb begin
     unique case (fetch_state_i)
+      fetch_nope: begin
+        pc_d = PC_INIT;
+      end
       fetch_keep: begin
         pc_d = pc_q;
       end
       fetch_next: begin
-        pc_d = (pc_q == (PC_NUM-1)) ? pc_t'(0) : pc_q + pc_t'(1);
+        pc_d = pc_q + ((take_branch) ? branch_value : pc_q + pc_t'(PC_ADDR_SIZE));
       end
     endcase
   end
 
   always_ff @(posedge clk or negedge arstn) begin
     if (~arstn) begin
-      pc_q <= pc_t'(0);
+      pc_q <= PC_INIT;
     end else begin
       pc_q <= pc_d;
     end
   end
+  //..end pc
+
 
   //..instruction
   //..rom
-  instruction_t raw_rom_instruction, rom_instruction;
+  instruction_t rom_instruction;
 
   rom #(
     .WORD_WIDTH       (INS_SIZE),
@@ -49,12 +62,12 @@ import fetch_pkg::*;
     .clk(clk),
     .arstn(arstn),
     .addr_i(pc_q),
-    .data_o(raw_rom_instruction)
+    .data_o(rom_instruction)
   );
-  assign rom_instruction = (~arstn) ? instruction_t'(0) : raw_rom_instruction;
 
   //..fetch or keep instruction
-  assign fetch_inst_o = rom_instruction;
+  assign fetch_to_decoder_info_o.valid = arstn;
+  assign fetch_to_decoder_info_o.raw_instruction = (arstn) ? rom_instruction : instruction_t'(0);
 
   //..debug
   assign fetch_id_o = pc_q;

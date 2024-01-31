@@ -8,21 +8,10 @@ import alu_pkg::*;
   input logic clk,
   input logic arstn,
 
-  //..alu ctrl
-  input alu_s1_font_t alu_s1_font_i,
-  input alu_opcode_t alu_opcode_i,
-  input imm_t src_1_i,
-  input imm_t src_2_i,
-  input imm_t src_3_i,
+  //..reg_to_alu
+  input  reg_to_alu_req_t reg_to_alu_req_i,
+  output alu_to_wb_req_t  alu_to_wb_req_o
 
-  //..further signals
-  input logic wb_wr_i,
-  input reg_t reg_dst_i,
-  output logic wb_wr_o,
-  output reg_t reg_dst_o,
-
-  //..output value
-  output imm_t dst_o
 );
 
   //..ff alu
@@ -31,11 +20,11 @@ import alu_pkg::*;
   imm_t src_1_d, src_1_q;
   imm_t src_2_d, src_2_q;
   imm_t src_3_d, src_3_q;
-  assign alu_s1_font_d = alu_s1_font_i;
-  assign alu_opcode_d = alu_opcode_i;
-  assign src_1_d = src_1_i;
-  assign src_2_d = src_2_i;
-  assign src_3_d = src_3_i;
+  assign alu_s1_font_d   =  reg_to_alu_req_i.alu_s1_font;
+  assign alu_opcode_d    =  reg_to_alu_req_i.alu_opcode;
+  assign src_1_d         =  reg_to_alu_req_i.src_1;
+  assign src_2_d         =  reg_to_alu_req_i.src_2;
+  assign src_3_d         =  reg_to_alu_req_i.src_3;
 
   always_ff @(posedge clk or negedge arstn) begin
     if (~arstn) begin
@@ -69,13 +58,13 @@ import alu_pkg::*;
   always_comb begin
     case (alu_opcode_q)
       op_none: begin
-        dst_o = imm_t'(0);
+        alu_to_wb_req_o.dst = imm_t'(0);
       end
       op_move: begin
-        dst_o = operand_1;
+        alu_to_wb_req_o.dst = operand_1;
       end
       op_add: begin
-        dst_o = operand_1 + src_2_q;
+        alu_to_wb_req_o.dst = operand_1 + src_2_q;
       end
     endcase
   end
@@ -83,23 +72,21 @@ import alu_pkg::*;
 
 
   //..ff alu further signals
-  logic wb_wr_d, wb_wr_q;
-  reg_t reg_dst_d, reg_dst_q;
+  alu_fur_sig_t alu_fur_sig_d, alu_fur_sig_q;
 
-  assign wb_wr_d = wb_wr_i;
-  assign reg_dst_d = reg_dst_i;
+  assign alu_fur_sig_d = reg_to_alu_req_i.fur_sig;
 
   always_ff @(posedge clk or negedge arstn) begin
     if (~arstn) begin
-      wb_wr_q <= logic'(0);
-      reg_dst_q <= reg_t'(0);
+      alu_fur_sig_q.wb_wr <= logic'(0);
+      alu_fur_sig_q.reg_dst <= reg_t'(0);
+      alu_fur_sig_q.pc_branch <= logic'(0);
     end else begin
-      wb_wr_q <= wb_wr_d;
-      reg_dst_q <= reg_dst_d;
+      alu_fur_sig_q <= alu_fur_sig_d; 
     end
   end
 
   //..alu vypas
-  assign wb_wr_o = wb_wr_q;
-  assign reg_dst_o = reg_dst_q;
+  assign alu_to_wb_req_o.fur_sig = alu_fur_sig_q;
+
 endmodule

@@ -15,10 +15,10 @@ vlog -sv +acc=rn -mfcu -suppress 2892,7033,7061 -work $vlib_dir/work -f $file_li
 
 
 #execute
-vsim $vlib_dir/work.mod_temp -t ps -suppress 7033,7061  
+vsim $vlib_dir/work.visible_tb -t ps -suppress 7033,7061  
 
 do wave.do
 
-run 100 ms
+run -all
 
 quit
