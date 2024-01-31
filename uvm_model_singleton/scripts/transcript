@@ -1,0 +1,83 @@
+# vsim -c ../workspace/work.testbench -t ns -do "run -all" 
+# Start time: 14:50:34 on Jan 31,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# //  Questa Sim-64
+# //  Version 2022.4 linux_x86_64 Oct 18 2022
+# //
+# //  Copyright 1991-2022 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.utils_pkg(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.uvm_test_pkg(fast)
+# Loading work.testbench_sv_unit(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.testbench(fast)
+# Loading /eda/Siemens/2022-23/RHELx86/QUESTA-CORE-PRIME_2022.4/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
+# run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test v1_test...
+# UVM_INFO ../src/ka_mem_model.sv(37) @ 0: reporter [MEMORY MODEL] CREATING MEMORY MODEL WITH ADDR WIDTH =          64, DATA WITDH =         128
+# UVM_INFO ../src/ka_mem_model.sv(37) @ 0: reporter [MEMORY MODEL] CREATING MEMORY MODEL WITH ADDR WIDTH =          64, DATA WITDH =         256
+# UVM_INFO ../src/driver.sv(15) @ 0: uvm_test_top.m_env.agenta.m_driver [driver] build_phase start in driver
+# UVM_INFO ../src/driver.sv(19) @ 10: uvm_test_top.m_env.agenta.m_driver [driver] DRIVING: 00
+# UVM_INFO ../src/driver.sv(19) @ 20: uvm_test_top.m_env.agenta.m_driver [driver] DRIVING: 01
+# UVM_INFO ../src/driver.sv(19) @ 30: uvm_test_top.m_env.agenta.m_driver [driver] DRIVING: 02
+# UVM_INFO ../src/driver.sv(19) @ 40: uvm_test_top.m_env.agenta.m_driver [driver] DRIVING: 03
+# UVM_INFO ../src/driver.sv(19) @ 50: uvm_test_top.m_env.agenta.m_driver [driver] DRIVING: 04
+# UVM_INFO ../src/driver.sv(19) @ 60: uvm_test_top.m_env.agenta.m_driver [driver] DRIVING: 05
+# UVM_INFO ../src/driver.sv(19) @ 70: uvm_test_top.m_env.agenta.m_driver [driver] DRIVING: 06
+# UVM_INFO ../src/driver.sv(19) @ 80: uvm_test_top.m_env.agenta.m_driver [driver] DRIVING: 07
+# UVM_INFO ../src/driver.sv(19) @ 90: uvm_test_top.m_env.agenta.m_driver [driver] DRIVING: 08
+# UVM_INFO ../src/driver.sv(19) @ 100: uvm_test_top.m_env.agenta.m_driver [driver] DRIVING: 09
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 100: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :   17
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [MEMORY MODEL]     2
+# [Questa UVM]     2
+# [RNTST]     1
+# [TEST_DONE]     1
+# [driver]    11
+# ** Note: $finish    : /eda/Siemens/2022-23/RHELx86/QUESTA-CORE-PRIME_2022.4/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 100 ns  Iteration: 64  Instance: /testbench
+# End time: 14:50:38 on Jan 31,2024, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 1
