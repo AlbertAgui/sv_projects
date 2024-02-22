@@ -11,7 +11,7 @@ source get_updated_tests_var.sh
 #fi
 
 #get files
-updated_tests=$(git diff --name-only HEAD~1 HEAD)
+updated_tests=$(git diff --name-only HEAD~ HEAD --diff-filter=AMR)
 
 #run tests
 for test in updated_tests; do
