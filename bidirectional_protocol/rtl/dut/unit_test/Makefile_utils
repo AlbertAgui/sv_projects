@@ -1,0 +1,38 @@
+SHELL = /bin/bash
+WAVE_FILE = wave_test_test.do
+
+TESTNAME ?= test
+TESTBENCH ?= dut_top_tb
+
+SIMDIR = $(VERIF)/rtl/dut/unit_test/sim
+RTLDIR = $(VERIF)/rtl/dut
+TESTDIR = $(VERIF)/rtl/dut/unit_test
+BUILDIR = $(SIMDIR)/build
+WORKDIR = $(BUILDIR)/work
+COMP_TRANSCRIPT_FILE ?= $(SIMDIR)/comp_transcript
+SIM_TRANSCRIPT_FILE ?= $(SIMDIR)/sim_transcript
+WLF_FILE ?= $(BUILDIR)/$(TESTNAME).wlf
+UVM_VERBOSITY ?= UVM_LOW
+MODELSIMDIR ?= $(VERIF)/sim
+
+all: clean compile run
+
+export rtlfilelist = $(RTLDIR)/filelist/dut.f
+export testfilelist = $(TESTDIR)/filelist/test.f
+
+SCRIPTDIR = $(VERIF)/script
+include ${SCRIPTDIR}/mk/vsim.mk
+
+compile:
+	cd $(VERIF)
+	mkdir -p ${BUILDIR}
+	${VLOG} ${VLOG_FLAGS} -f ${rtlfilelist} -f ${testfilelist}
+
+run:
+	cd $(VERIF)
+	${VSIM} ${VSIM_FLAGS} +UVM_TESTNAME=${TESTNAME} ${TESTBENCH}
+
+clean:
+	cd $(VERIF)
+	rm -rf $(WORKDIR)
+	rm -f $(COMP_TRANSCRIPT_FILE) ${SIM_TRANSCRIPT_FILE} ${WLF_FILE}
