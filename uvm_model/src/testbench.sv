@@ -46,7 +46,7 @@ module testbench;
     /*if(!uvm_config_db #(logic)::get(this,"", "wr", wr))
       `uvm_error(get_type_name(), "wr not found")*/
 
-    run_test("v1_test");
+    run_test();
   end
 
 endmodule
