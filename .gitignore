@@ -2,3 +2,9 @@
 **/build
 **/rtl
 *transcript
+
+**/spike
+**/workspace
+
+script/check_updated_tests/rust/check_tests/target
+script/check_updated_tests/rust/check_tests/Cargo.lock
