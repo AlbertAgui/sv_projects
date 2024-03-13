@@ -7,10 +7,10 @@ module dut_top
 )
 
 (
-	input logic clk_i,    // Clock
-	input logic rstn_i,  // Asynchronous reset active low
-	input logic req_valid_i,
-	input logic [DATA_SIZE-1:0] req_data_i,
+	input  logic clk_i,    // Clock
+	input  logic rstn_i,  // Asynchronous reset active low
+	input  logic req_valid_i,
+	input  logic [DATA_SIZE-1:0] req_data_i,
 	output logic req_ready_o,
 	output logic resp_valid_o,
 	output logic [DATA_SIZE-1:0] resp_data_o
@@ -39,7 +39,7 @@ localparam B_COUNT = $clog2(COUNT+1);
 logic [B_COUNT-1:0] req_counter_d, req_counter_q;
 logic [B_COUNT-1:0] resp_counter_d, resp_counter_q;
 
-logic req_queue_valid_d, req_queue_valid_q;
+logic req_queue_ready_d, req_queue_ready_q;
 logic req_queue_ready;
 
 localparam RESP_RESOURCES = 4;
@@ -74,7 +74,7 @@ end
 always_comb begin
 	req_state_d       = req_state_q;
 	req_counter_d     = req_counter_q;
-	req_queue_valid_d = req_queue_valid_q;
+	req_queue_ready_d = req_queue_ready_q;
 	case (req_state_q)
 		REQ_COUNT: begin
 			if(req_counter_q == COUNT) begin
@@ -85,7 +85,7 @@ always_comb begin
 		end
 		REQ_UNSET: begin
 			if (req_set) begin
-				req_queue_valid_d = 1'b1; //not here in both configs
+				req_queue_ready_d = 1'b1; //not here in both configs
 				req_state_d   = REQ_SET;
 			end
 		end
@@ -93,7 +93,7 @@ always_comb begin
 			if (req_unset) begin
 				req_counter_d     = B_COUNT'(0);
 				req_state_d       = REQ_COUNT;
-				req_queue_valid_d = 1'b0;
+				req_queue_ready_d = 1'b0;
 			end
 		end
 		/*default: begin
@@ -142,14 +142,14 @@ always_ff @(posedge clk_i or negedge rstn_i) begin
 		req_counter_q      <= B_COUNT'(0);
 		resp_counter_q     <= B_COUNT'(0);
 		resp_queue_ready_q <= 1'b0;
-		req_queue_valid_q  <= 1'b0;
+		req_queue_ready_q  <= 1'b0;
 	end else begin
 		req_state_q        <= req_state_d;
 		resp_state_q       <= resp_state_d;
 		req_counter_q      <= req_counter_d;
 		resp_counter_q     <= resp_counter_d;
 		resp_queue_ready_q <= resp_queue_ready_d;
-		req_queue_valid_q  <= req_queue_valid_d;
+		req_queue_ready_q  <= req_queue_ready_d;
 	end
 end
 
@@ -173,15 +173,15 @@ assign resp_valid_o = resp_queue_valid;
 
 //HANDSHAKE PROTOCOL
 if (CNFG == "VALID_READY") begin
-	assign queue_wr    = req_queue_valid_d;
-	assign req_ready_o = req_queue_valid_d; //wr signal
+	assign queue_wr    = req_queue_ready_d;
+	assign req_ready_o = req_queue_ready_d && req_valid_i; //wr signal
 	assign req_set     = req_valid_i && req_queue_ready;
 	assign req_unset   = !req_valid_i || !req_queue_ready;
 	assign resp_set    = resp_resources_d == RESP_RESOURCES;
 	assign resp_unset  = resp_resources_d == 0;
 end else if (CNFG == "READY_VALID") begin
-	assign queue_wr    = req_queue_valid_d && req_valid_i;
-    assign req_ready_o = req_queue_valid_d;
+	assign queue_wr    = req_queue_ready_d && req_valid_i;
+    assign req_ready_o = req_queue_ready_d;
 	assign req_set     = req_queue_ready;
 	assign req_unset   = !req_queue_ready;
 	assign resp_set    = resp_resources_d == RESP_RESOURCES;

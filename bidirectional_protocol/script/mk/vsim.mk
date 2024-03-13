@@ -3,10 +3,7 @@ include ${SCRIPTDIR}/mk/random.mk
 # Executables
 VLOG           = vlog
 VSIM           = vsim
-#WAVES         ?= 0
 VSIM_WAVES_DO ?= $(SCRIPTDIR)/waves.tcl
-#ASSERTION     ?= 0
-#GUI           ?= 0
 
 # VLOG (compile)
 VLOG_FLAGS        += -modelsimini $(MODELSIMDIR)/modelsim.ini
@@ -45,7 +42,7 @@ endif
 ################################################################################
 # Interactive simulation
 ifdef GUI
-VSIM_FLAGS += -gui -debugdb
+VSIM_FLAGS += -gui
 else
 VSIM_FLAGS += -batch
 VSIM_FLAGS += -do "run -all;"

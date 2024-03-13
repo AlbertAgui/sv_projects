@@ -4,13 +4,16 @@
 import uvm_pkg::*;
 `include "uvm_macros.svh"
 
-class agent extends uvm_agent;
+class agent#(
+  parameter int DATA_SIZE =  16,
+  parameter string CNFG = "READY_VALID"
+) extends uvm_agent;
   // UVM automation macros for general components
-  `uvm_component_utils(agent)
+  `uvm_component_utils(agent #(DATA_SIZE,CNFG))
 
   //declaring agent components
-  driver    m_driver;
-  sequencer m_sequencer;
+  driver#(DATA_SIZE,CNFG)    m_driver;
+  sequencer#(DATA_SIZE) m_sequencer;
 
   // constructor
   function new (string name, uvm_component parent);
@@ -22,8 +25,8 @@ class agent extends uvm_agent;
     super.build_phase(phase);
 
     if(get_is_active() == UVM_ACTIVE) begin
-      m_driver = driver::type_id::create("m_driver", this);
-      m_sequencer = sequencer::type_id::create("m_sequencer", this);
+      m_driver = driver#(DATA_SIZE,CNFG)::type_id::create("m_driver", this);
+      m_sequencer = sequencer#(DATA_SIZE)::type_id::create("m_sequencer", this);
     end
   endfunction : build_phase
 

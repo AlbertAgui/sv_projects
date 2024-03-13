@@ -4,10 +4,13 @@
 import uvm_pkg::*;
 `include "uvm_macros.svh"
 
-class seq_item extends uvm_sequence_item;
-  `uvm_object_utils(seq_item)
+class seq_item #(
+  parameter int DATA_SIZE =  16
+) extends uvm_sequence_item;
+  `uvm_object_utils(seq_item#(DATA_SIZE))
+  
   //Analysis Information
-  logic [7:0] rdata;
+  rand logic [DATA_SIZE-1:0] data;
   
   //Constructor
   function new(string name = "seq_item");
