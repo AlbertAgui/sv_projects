@@ -1,4 +1,4 @@
 *.bak
-*/transcript
-/SoC/sim/vsim.wlf
-/SoC/workspace
+**/build
+**/rtl
+*transcript
